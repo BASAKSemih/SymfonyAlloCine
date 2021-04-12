@@ -9,41 +9,19 @@
     {{ form_start(form) }}
 
 
-    <div class="form-control container mt-5">
-        <div id="legend">
-            <legend class="">Inscription</legend>
-        </div>
+    <div class="mt-5 container">
 
-        <div class="control-group">
-            <!-- E-mail -->
-            <label class="control-label" for="email">Votre E-mail</label>
-            <div class="controls">
-                {{ form_row(form.email) }}
-            </div>
-        </div>
+        <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+        <label for="">Votre Email</label>
+        {{ form_row(form.email) }}
 
-        <div class="control-group">
-            <!-- Password-->
-            <label class="control-label" for="password">Mot de passe</label>
-            <div class="controls">
-                {{ form_row(form.password.first) }}
-            </div>
-        </div>
+        <label for="">Votre Mot de passe</label>
+        {{ form_row(form.password.first) }}
+        <label for="">Confirmer votre Mot de passe</label>
+        {{ form_row(form.password.second) }}
 
-        <div class="control-group">
-            <label class="control-label"  for="password_confirm">Confirmer votre mot de passe</label>
-            <div class="controls">
-                {{ form_row(form.password.second) }}
-            </div>
-        </div>
-
-        <div class="control-group">
-            <div class="controls">
-                {{ form_row(form.submit) }}
-            </div>
-        </div>
+        {{ form_row(form.submit) }}
     </div>
     {{ form_end(form) }}
-
 
 {% endblock %}

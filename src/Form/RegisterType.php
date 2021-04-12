@@ -24,7 +24,8 @@ class RegisterType extends AbstractType
                     'max' => 125
                 ]),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre email'
+                    'placeholder' => 'Merci de saisir votre email',
+                    'class' => 'form-control',
                 ]
             ])
             ->add('password', RepeatedType::class, [
@@ -34,18 +35,24 @@ class RegisterType extends AbstractType
                 'first_options' => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => 'Merci de saisir votre mot de passe.'
+                        'placeholder' => 'Merci de saisir votre mot de passe.',
+                        'class' => 'form-control',
                     ]
                 ],
                 'second_options' => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => 'Merci 2de confirmer votre mot de passe.'
+                        'placeholder' => 'Merci 2de confirmer votre mot de passe.',
+                        'class' => 'form-control',
                     ]
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "S'inscrire"
+                'label' => "S'inscrire",
+                'attr' => [
+                    'class' => 'btn btn-lg btn-primary mt-2',
+                ]
+
             ])
         ;
     }
