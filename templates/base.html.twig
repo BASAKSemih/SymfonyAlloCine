@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %}
+</head>
+<body>
+<div class="">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Allo ciné</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    {% if app.user %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Mon Compte</a>
+                        </li>
+
+                    {% else %}
+                        <a class="nav-link" href="">Se connecter</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Inscription</a>
+                        </li>
+                    {% endif %}
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Informations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">Mentions Légales</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Politique de confidentialité</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="py-3 text-center mt-1"></div>
+    {% block content %} {% endblock %}
+
+
+
+
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2020–2021 MyGame</p>
+    </footer>
+</div>
+{% block javascripts %} {{ encore_entry_script_tags('app') }} {% endblock %}
+
+</body>
+</html>
