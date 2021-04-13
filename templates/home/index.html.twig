@@ -3,11 +3,15 @@
 
 
 {% block content %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-
+    <div class="row px-5 text-center">
+        {% for film in films %}
+            <div class=" col-md-2 mt-5 ">
+                <h1 class="">{{ film.name }}</h1>
+                <img src="/uploads/{{ film.illustration }}" alt="{{ film.name }}" class="img-fluid ">
+            </div>
+        {% endfor %}
+    </div>
 
 
 {% endblock %}
