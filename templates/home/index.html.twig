@@ -4,11 +4,12 @@
 
 {% block content %}
 
-    <div class="row px-5 text-center">
+    <div class="row text-center ">
         {% for film in films %}
             <div class=" col-md-2 mt-5 ">
                 <h1 class="">{{ film.name }}</h1>
                 <img src="/uploads/{{ film.illustration }}" alt="{{ film.name }}" class="img-fluid ">
+                <button class="btn btn-primary">Voir plus d'informations</button>
             </div>
         {% endfor %}
     </div>
